@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+
+    <style>
+        body {
+            background-color: rgb(107, 183, 255);
+            color: white;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <div>Clique em mim</div>
+    <p>Aprendendo <strong>DOM</strong> em JavaScript</p>
+    <p id="msg">Mais um texto aqui</p>
+    <p name='nome'>Aqui fica o name</p>
+    
+
+    <script>
+
+        /* 
+        5 metodos de selecionar elementos no DOM
+
+        por marca
+        por ID 
+        por Nome 
+        por Classe 
+        por Seletor 
+
+        */
+        // POR MARCA = Dá pra selecionar mais de um
+
+        var corpo = window.document.body
+        var p1 = document.getElementsByTagName('p')[1] // pegando só o primeiro que ele encontrou
+        window.document.write(p1.innerText) // pegando apenas texto   
+        p1.style.color = 'blue'
+        document.write('<br>' + p1.innerHTML) // pegando texto e as tags
+        corpo.style.background = 'black'
+        
+        /*
+            // POR ID
+
+            getElementByID()
+
+            // POR NOME
+
+            getElementsByName()
+
+            // POR CLASSE
+
+            getElementsByClassName()
+
+            // POR SELETOR
+
+            querySelector()
+            querySelectorAll()
+
+
+        */
+
+        var d = document.getElementById('msg')
+        d.style.background = 'green'
+        d.innerText = 'Estou aguardando...'
+        document.write(d)
+
+
+        window.document.getElementById('msg').innerText = 'Olá'
+
+        var n = document.getElementsByName('nome')[0]
+        n.style.background = 'red'
+
+        var f = document.querySelector('p#msg')
+        f.innerText = 'Novo texto'
+        
+
+
+    </script>
+</body>
+</html>
